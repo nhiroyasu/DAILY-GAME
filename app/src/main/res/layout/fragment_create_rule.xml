@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CreateRuleFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:padding="30dp"
+            android:gravity="center"
+            android:transitionName="shared_element_create_container"
+            android:background="@drawable/create_rule_view_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:fontFamily="@font/fredoka_one"
+                android:text="@string/create_rule"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="48sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:hint="@string/rule_hint"
+                app:boxBackgroundColor="@android:color/white"
+                app:startIconContentDescription="@string/title"
+                app:startIconDrawable="@drawable/ic_title_24px">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/create_rule_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/create_rule_time_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:text="@string/time_hint"
+                android:textColor="@color/colorAppBlack"
+                app:backgroundTint="@android:color/white"
+                app:icon="@drawable/ic_alarm_24px"
+                app:iconTint="?attr/colorControlNormal" />
+
+            <TextView
+                android:id="@+id/selected_time_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:text="@string/time_none"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/create_rule_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="@font/baloo"
+            android:text="@string/create"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+
+            app:icon="@drawable/ic_check_24px"
+            app:iconTint="@android:color/white" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</FrameLayout>

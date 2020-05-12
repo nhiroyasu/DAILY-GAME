@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">DailyGame</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="love">LOVE</string>
+    <string name="search">SEARCH</string>
+    <string name="more">MORE</string>
+    <string name="content_description_love">LOVE more</string>
+    <string name="content_description_search">SEARCH more</string>
+    <string name="content_description_more">MORE more</string>
+    <string name="setting">Setting</string>
+    <string name="background">background</string>
+    <string name="help">Help</string>
+    <string name="add">ADD</string>
+    <string name="add_my_rule">add my rule</string>
+    <string name="title">TITLE</string>
+    <string name="time">TIME</string>
+    <string name="rule_hint">ルール名を入力</string>
+    <string name="time_hint">期限時間を設定</string>
+    <string name="time_none">-- : --</string>
+    <string name="create">CREATE</string>
+    <string name="create_rule">CREATE RULE</string>
+    <string name="done_check">DONE ?</string>
+    <string name="done">DONE</string>
+    <string name="signout">サインアウト</string>
+    <string name="twitter">Twitter</string>
+    <string name="twitter_setting_description">ルールを守れなかった場合のTwitterの挙動をカスタマイズできます</string>
+    <string name="account">ACCOUNT</string>
+    <string name="save">SAVE</string>
+    <string name="rule_name">ルール</string>
+    <string name="time_limit">期限</string>
+    <string name="usage">使い方</string>
+    <string name="about_this_app">このアプリについて</string>
+</resources>

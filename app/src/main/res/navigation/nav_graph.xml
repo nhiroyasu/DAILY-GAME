@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cyan_namid09.dailygame.Home.homeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_createRuleFragment"
+            app:destination="@id/createRuleFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_editRuleFragment"
+            app:destination="@id/editRuleFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false"></action>
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+            app:enterAnim="@anim/slide_from_bottom"
+            app:popExitAnim="@anim/slide_to_bottom"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createRuleFragment2"
+            app:destination="@id/createRuleFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_descriptionFragment"
+            app:destination="@id/descriptionFragment"
+            app:enterAnim="@anim/slide_from_bottom"
+            app:popExitAnim="@anim/slide_to_bottom" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/createRuleFragment"
+        android:name="com.cyan_namid09.dailygame.CreateRuleFragment"
+        android:label="fragment_create_rule"
+        tools:layout="@layout/fragment_create_rule" />
+    <fragment
+        android:id="@+id/editRuleFragment"
+        android:name="com.cyan_namid09.dailygame.EditRuleFragment"
+        android:label="fragment_edit_rule"
+        tools:layout="@layout/fragment_edit_rule" >
+        <argument
+            android:name="rule_id"
+            app:argType="integer" />
+        <argument
+            android:name="rule_title"
+            app:argType="string" />
+        <argument
+            android:name="rule_time"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.cyan_namid09.dailygame.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.cyan_namid09.dailygame.DescriptionFragment"
+        android:label="fragment_description"
+        tools:layout="@layout/fragment_description" />
+</navigation>

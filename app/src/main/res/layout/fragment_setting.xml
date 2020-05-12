@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SettingFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="true"
+            app:liftOnScroll="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"
+                app:expandedTitleGravity="center"
+                app:expandedTitleMarginTop="88dp"
+                app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/background"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/background6" />
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/topAppBar"
+                    style="@style/Widget.MaterialComponents.Toolbar.Surface"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="pin"
+                    app:menu="@menu/setting_menu"
+                    app:navigationIcon="@drawable/ic_icon_for_menu_28px"
+                    app:title="SETTING" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="20dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/account"
+                            android:textSize="28sp"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/fredoka_one"/>
+                        <TextView
+                            android:id="@+id/text_of_account_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="account_id"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/noto_sans"/>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp"
+                        android:paddingHorizontal="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp"
+                            android:fontFamily="@font/fredoka_one"
+                            android:text="@string/twitter"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="@string/twitter_setting_description"
+                            android:textAlignment="textStart"
+                            android:textSize="12sp" />
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp"
+                            app:startIconTint="?attr/colorControlNormal"
+                            app:helperTextEnabled="true"
+                            app:helperText="Twitter表示名"
+                            app:startIconDrawable="@drawable/ic_person_24px"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/text_field_of_twitter_name"
+                                android:textSize="14sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp"
+                            app:startIconTint="?attr/colorControlNormal"
+                            app:helperTextEnabled="true"
+                            app:helperText="ツイートの内容\n{rule}の部分がルール名に変わります"
+                            app:startIconDrawable="@drawable/ic_title_24px"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/text_field_of_tweet"
+                                android:textSize="14sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minLines="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="right">
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/save_button_of_twitter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/save"
+                                style="?attr/borderlessButtonStyle" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/sign_out_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="@string/signout"
+                    android:textColor="@android:color/white"
+                    app:icon="@drawable/ic_forward_24px"
+                    app:iconPadding="5dp"
+                    app:iconTint="@android:color/white" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/home_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:tint="@android:color/white"
+            android:foregroundTint="@android:color/white"
+            app:srcCompat ="@drawable/ic_home_24px"
+            app:tint ="@android:color/white"
+            app:layout_anchor="@id/appBarLayout"
+            app:layout_anchorGravity="bottom|right|end"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</FrameLayout>

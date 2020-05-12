@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditRuleFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginVertical="0dp"
+            android:background="@drawable/edit_rule_view_shape"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="30dp"
+            android:transitionName="shared_element_edit_container">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="30dp"
+                android:fontFamily="@font/fredoka_one"
+                android:text="@string/done_check"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="48sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rule_name"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:transitionName="shared_element_edit_title"/>
+            <TextView
+                android:id="@+id/title_on_edit_rule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="課題を提出"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:transitionName="shared_element_edit_title"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/time_limit"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:transitionName="shared_element_edit_title"/>
+            <TextView
+                android:id="@+id/time_on_edit_rule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="10 : 30 まで"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:transitionName="shared_element_edit_time"/>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/done_button_on_edit_rule"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginVertical="32dp"
+            android:backgroundTint="@color/colorAppDark"
+            android:text="@string/done"
+            android:fontFamily="@font/baloo"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_check_24px"
+            app:iconTint="@android:color/white"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

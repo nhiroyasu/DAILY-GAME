@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin" // ADD for navigation
+apply plugin: 'kotlin-kapt' // ADD for kapt
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.cyan_namid09.dailygame"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 2
+        versionName "1.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+
+    viewBinding {
+        enabled = true
+    }
+
+
+}
+
+dependencies {
+    // For Material.io
+    def material_version = "1.2.0-alpha05"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.viewpager2:viewpager2:1.0.0"  // for ViewPager
+
+    // For LifeCyCle
+    def lifecycle_version = "2.0.0"
+    def lifecycle_version_ktx = "2.1.0-beta01"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version_ktx"
+
+    // For Navigation
+    def nav_version = "2.3.0-alpha01"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    // For Firebase
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+
+    // For Twitter 4j
+    implementation 'org.twitter4j:twitter4j-core:4.0.7'
+
+    // For Room
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    // For Kotlin use kapt instead of annotationProcessor
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+apply plugin: 'com.google.gms.google-services'
